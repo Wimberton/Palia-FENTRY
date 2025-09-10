@@ -3,7 +3,7 @@ project(OHook CXX)
 enable_language(C)
 
 set(CMAKE_CXX_STANDARD 23)
-# set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if(MSVC)
     add_compile_options(/MP /MD /bigobj)
@@ -120,7 +120,6 @@ file(GLOB LANGUAGES_HEADERS languages/*.h)
 # Combine all OHook sources
 set(OHOOK_ALL_SOURCES 
     ${OHOOK_CORE_SOURCES}
-    ${OHOOK_FEATURES_SOURCES} 
     ${OHOOK_HANDLERS_SOURCES}
     ${OHOOK_DETOURS_SOURCES}
     ${OHOOK_DETOURS_MAIN_SOURCES}
@@ -136,7 +135,6 @@ set(OHOOK_ALL_SOURCES
 
 set(OHOOK_ALL_HEADERS
     ${OHOOK_CORE_HEADERS}
-    ${OHOOK_FEATURES_HEADERS}
     ${OHOOK_HANDLERS_HEADERS}
     ${OHOOK_DETOURS_HEADERS}
     ${OHOOK_DETOURS_MAIN_HEADERS}
@@ -189,4 +187,11 @@ target_link_libraries(OHook PRIVATE
     $<$<BOOL:${WIN32}>:psapi> 
     $<$<BOOL:${WIN32}>:opengl32.lib> 
     $<$<BOOL:${WIN32}>:Winmm.lib>
+)
+
+# Copy config files to build directory
+add_custom_command(TARGET OHook POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/config $<TARGET_FILE_DIR:OHook>/config
+    COMMENT "Copying config files to build directory"
 )

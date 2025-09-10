@@ -31,7 +31,12 @@ void DetourManager::AddInstance(UObject* Instance) {
             const void** VFT = *reinterpret_cast<const void***>(Object);
             MainProcessEvent = reinterpret_cast<ProcessEventCallback*>(VFT[Offsets::ProcessEventIdx]);
         } else {
-            MainProcessEvent = reinterpret_cast<ProcessEventCallback*>(reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr)) + Offsets::ProcessEvent);
+            HMODULE hModule = GetModuleHandle(nullptr);
+            if (hModule == nullptr) {
+                Logger::GetInstance().Error("Failed to get module handle");
+                return;
+            }
+            MainProcessEvent = reinterpret_cast<ProcessEventCallback*>(reinterpret_cast<uintptr_t>(hModule) + Offsets::ProcessEvent);
         }
     }
     std::cout << "~~~ Adding PE Detour: " << Instance->GetName() << " ~~~\n";

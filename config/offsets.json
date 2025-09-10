@@ -1,0 +1,33 @@
+{
+  "clients": {
+    "standalone": {
+      "executable": "PaliaClient-Win64-Shipping.exe",
+      "offsets": {
+        "GObjects": "0x0AA4DDC0",
+        "AppendString": "0x011D4E30", 
+        "GNames": "0x0A969F80",
+        "GWorld": "0x0ABCED08",
+        "ProcessEvent": "0x01421600",
+        "ProcessEventIdx": "0x0000004F"
+      }
+    },
+    "steam": {
+      "executable": "PaliaClientSteam-Win64-Shipping.exe",
+      "offsets": {
+        "GObjects": "0x0AAC0040",
+        "AppendString": "0x011D5870",
+        "GNames": "0x0A9DC200", 
+        "GWorld": "0x0AC40F88",
+        "ProcessEvent": "0x014222B0",
+        "ProcessEventIdx": "0x0000004F"
+      }
+    }
+  },
+  "default_client": "standalone",
+  "logging": {
+    "level": "INFO",
+    "console_output": true,
+    "file_output": true,
+    "log_file": "logs/palia_fentry.log"
+  }
+}
