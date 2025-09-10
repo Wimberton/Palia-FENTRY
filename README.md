@@ -104,6 +104,5 @@ More information can be found in the [PaliaSDK README](https://github.com/Wimber
 
 | [![Video 1](https://img.youtube.com/vi/5OQ5uGaM0kE/0.jpg)](https://www.youtube.com/watch?v=5OQ5uGaM0kE) |  |
 |:------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|
-| [Palia-FENTRY Full Walkthrough](https://www.youtube.com/watch?v=5OQ5uGaM0kE)                                          |                                           |
 | [![Video 3](https://img.youtube.com/vi/WECXNUJx1ME/0.jpg)](https://www.youtube.com/watch?v=WECXNUJx1ME) | [![Video 4](https://img.youtube.com/vi/vso_yAm8RCE/0.jpg)](https://www.youtube.com/watch?v=vso_yAm8RCE) |
-| [Palia Instant Flow Tree Chopping Exploits](https://www.youtube.com/watch?v=WECXNUJx1ME)                                          | [Palia Auto Bug Catching Exploits](https://www.youtube.com/watch?v=vso_yAm8RCE)                                          |
+| [Palia Instant Flow Tree Chopping Exploits](https://www.youtube.com/watch?v=WECXNUJx1ME) | [Palia Auto Bug Catching Exploits](https://www.youtube.com/watch?v=vso_yAm8RCE)                                        |
