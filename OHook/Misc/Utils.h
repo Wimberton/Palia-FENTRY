@@ -111,7 +111,7 @@ inline AValeriaCharacter* GetValeriaCharacter() {
 
 // Load Asset PTR
 inline static UFunction* GetAssetByObjectPath;
-inline UObject* LoadAssetPtrFromPath(std::string Path) {
+inline UObject* LoadAssetPtrFromPath(const std::string& Path) {
     if (Path.empty()) return nullptr;
     
     std::wstring widePath(Path.begin(), Path.end());
@@ -174,7 +174,7 @@ inline bool IsGameWindowActive() {
 }
 
 template <typename SearchType>
-SearchType GetFlagSingle(std::string Text, std::map<SearchType, std::vector<std::string>>& map) {
+SearchType GetFlagSingle(const std::string& Text, std::map<SearchType, std::vector<std::string>>& map) {
     SearchType T = static_cast<SearchType>(0);
     for (auto& Entry : map) {
         bool bFound = false;
@@ -194,7 +194,7 @@ SearchType GetFlagSingle(std::string Text, std::map<SearchType, std::vector<std:
 }
 
 template <typename SearchType>
-SearchType GetFlagSingleEnd(std::string Text, std::map<SearchType, std::vector<std::string>>& map) {
+SearchType GetFlagSingleEnd(const std::string& Text, std::map<SearchType, std::vector<std::string>>& map) {
     SearchType T = static_cast<SearchType>(0);
     for (auto& Entry : map) {
         bool bFound = false;

@@ -241,6 +241,10 @@ void RendererDetector::HookDX9()
 		if (library != nullptr)
 		{
 			Direct3DCreate9Ex = (decltype(Direct3DCreate9Ex))GetProcAddress(library, "Direct3DCreate9Ex");
+			if (Direct3DCreate9Ex == nullptr) {
+				// Fall back to older Direct3DCreate9 if Ex version not available
+				library = nullptr;
+			}
 			D3DPRESENT_PARAMETERS params = {};
 			params.BackBufferWidth = 1;
 			params.BackBufferHeight = 1;
